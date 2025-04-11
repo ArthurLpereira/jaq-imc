@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import PerguntasFrequentes from './screens/PerguntasFrequentes';
 import CalculoScreen from './screens/CalcImc';
 import IntroScreen from './screens/IntroScreen';
+import ResultadoScreen from './screens/ResultadoScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Início">
         <Drawer.Screen name="Início" component={IntroScreen} />
+        <Drawer.Screen name="Resultado" component={ResultadoScreen} />
         <Drawer.Screen name="Sobre" component={HomeScreen} />
         <Drawer.Screen name="Perguntas" component={PerguntasFrequentes} />
         <Drawer.Screen name="Calculo" component={CalculoScreen} />

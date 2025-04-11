@@ -5,8 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 export default function CalculoScreen() {
   const navigation = useNavigation();
 
-  const [tipoPessoa, setTipoPessoa] = useState('adulto');
-  const [sexo, setSexo] = useState('homem');
   const [peso, setPeso] = useState('');
   const [altura, setAltura] = useState('');
 
@@ -17,17 +15,15 @@ export default function CalculoScreen() {
     }
 
     navigation.navigate('Resultado', {
-      tipoPessoa,
-      sexo,
-      peso: parseFloat(peso),
-      altura: parseFloat(altura)
+      peso,
+      altura
     });
   };
 
   return (
     <View style={styles.wrapper}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Calculo de Massa Corporea</Text>
+        <Text style={styles.headerText}>Cálculo de Massa Corporal</Text>
       </View>
 
       <View style={styles.container}>
@@ -52,66 +48,46 @@ export default function CalculoScreen() {
         </TouchableOpacity>
 
         <Text style={styles.note}>
-          *Chegamos ao número índice de massa corporal de um adulto pelo seu peso em quilos (por exemplo, 80 kg), dividido por sua altura ao quadrado (vamos imaginar, 1,80 m x 1,80 m).
+          *O IMC é calculado dividindo o peso (kg) pela altura ao quadrado (m²).
         </Text>
       </View>
 
       <View style={styles.footer}>
-        <Text style={styles.footerText}>© 2025 - Desenvolvido po J.A.C</Text>
+        <Text style={styles.footerText}>© 2025 - Desenvolvido por J.A.C</Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    backgroundColor: '#eef2f7',
-  },
+  wrapper: { flex: 1, backgroundColor: '#eef2f7' },
   header: {
     backgroundColor: '#36539b',
     paddingVertical: 20,
     alignItems: 'center',
     paddingTop: 60,
   },
-  headerText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  container: {
-    flex: 1,
-    padding: 20,
-  },
+  headerText: { fontSize: 20, fontWeight: 'bold', color: '#fff' },
+  container: { flex: 1, padding: 20 },
   input: {
     backgroundColor: '#dbe4f0',
     padding: 10,
     marginVertical: 10,
-    borderRadius: 10
+    borderRadius: 10,
   },
   button: {
     backgroundColor: 'green',
     padding: 12,
     borderRadius: 8,
     alignItems: 'center',
-    marginVertical: 10
+    marginVertical: 10,
   },
-  buttonText: {
-    color: 'white',
-    fontWeight: 'bold'
-  },
-  note: {
-    fontSize: 12,
-    color: '#444',
-    marginTop: 20
-  },
+  buttonText: { color: 'white', fontWeight: 'bold' },
+  note: { fontSize: 12, color: '#444', marginTop: 20 },
   footer: {
     backgroundColor: '#36539b',
     padding: 12,
-    alignItems: 'center'
+    alignItems: 'center',
   },
-  footerText: {
-    color: '#fff',
-    fontSize: 14
-  }
+  footerText: { color: '#fff', fontSize: 14 },
 });
