@@ -44,6 +44,9 @@ const PerguntasFrequentes = ({ navigation }) => {
           e prática regular de exercícios físicos. Consulte um profissional de saúde para orientações personalizadas.
         </Text>
       </ScrollView>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>© 2025 - Desenvolvido po J.A.C</Text>
+      </View>
     </View>
   );
 };
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   header: {
-    backgroundColor: '#7eaaff',
+    backgroundColor: '#36539b',
     paddingVertical: 20,
     alignItems: 'center',
     paddingTop: 60,
@@ -88,6 +91,15 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     color: '#333',
   },
+  footer: {
+    backgroundColor: '#36539b',
+    padding: 12,
+    alignItems: 'center'
+  },
+  footerText: {
+    color: '#fff',
+    fontSize: 14
+  }
 });
 
 export default PerguntasFrequentes;

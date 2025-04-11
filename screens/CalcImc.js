@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#eef2f7',
   },
   header: {
-    backgroundColor: '#7eaaff',
+    backgroundColor: '#36539b',
     paddingVertical: 20,
     alignItems: 'center',
     paddingTop: 60,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   footer: {
-    backgroundColor: '#7eaaff',
+    backgroundColor: '#36539b',
     padding: 12,
     alignItems: 'center'
   },
