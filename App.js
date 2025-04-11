@@ -1,34 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
-import Logo from './assets/logo_jac.png';
-// Pegando a largura da tela
-const larguraDaTela = Dimensions.get('window').width;
-const AlturaDaTela = Dimensions.get('window').height / 1.3;
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import HomeScreen from './screens/HomeScreen';
+import PerguntasFrequentes from './screens/PerguntasFrequentes';
+import CalculoScreen from './screens/CalcImc';
+import IntroScreen from './screens/IntroScreen';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={[styles.DivHome, { width: larguraDaTela, height: AlturaDaTela }]}>
-        <Image source={Logo} style={styles.imagem} />
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Início">
+        <Drawer.Screen name="Início" component={IntroScreen} />
+        <Drawer.Screen name="Sobre" component={HomeScreen} />
+        <Drawer.Screen name="Perguntas" component={PerguntasFrequentes} />
+        <Drawer.Screen name="Calculo" component={CalculoScreen} />
 
-      </View>
-
-      <StatusBar style="auto" />
-    </View>
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  DivHome: {
-    backgroundColor: '#36539B',
-  },
-  imagem: {
-    width: 150,
-    height: 150,
-    resizeMode: 'contain',
-  },
-});
